@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EmployeeSystem.BusinessService\EmployeeSystem.BusinessService.csproj" />
     <ProjectReference Include="..\EmployeeSystem.DataEntity\EmployeeSystem.DataEntity.csproj" />
     <ProjectReference Include="..\EmployeeSystem.Repository\EmployeeSystem.Repository.csproj" />
   </ItemGroup>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EmployeeSystem.DataEntity;
-using EmployeeSystem.Repository.Repository;
+
 
 namespace EmployeeSystem.Repository.Concreate
 {
@@ -18,8 +18,8 @@ namespace EmployeeSystem.Repository.Concreate
             context = new EmployeeDbContext();
         }
 
-    
-       public StateDetail GetStateDetail(int id)
+
+        public StateDetail GetStateDetail(int id)
         {
             return context.StateDetails.Find(id);
         }

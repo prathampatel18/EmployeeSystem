@@ -1,7 +1,11 @@
-﻿@model List<StateDetail>
+﻿@model List<StateViewModel>
 
 
 @foreach (var a in Model)
 {
+    <div>@a.StateId</div>
     <div>@a.StateName</div>
+
+    
+   
 }

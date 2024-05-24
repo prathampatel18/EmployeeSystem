@@ -1,26 +1,25 @@
-﻿using EmployeeSystem.Repository.Concreate;
+﻿using Microsoft.AspNetCore.Mvc;
+using EmployeeSystem.Repository.Concreate;
 using EmployeeSystem.Repository.Repository;
-using Microsoft.AspNetCore.Mvc;
+using EmployeeSystem.BusinessService.Concreate;
+using EmployeeSystem.BusinessService.Interface;
+
 
 namespace EmployeeSystem.Controllers
 {
     public class StateControllers : Controller
     {
-        private readonly IStateDetailRepository stateDetailRepository;
+        private readonly IStateService stateService;
 
         public StateControllers()
         {
-            stateDetailRepository = new StateDetailRepository();
+            stateService = new StateService();
         }
 
-        public IActionResult StateDetail()
-        {
-            return View(stateDetailRepository.GetStateDetails());
-        }
-
+        
         public IActionResult Index()
         {
-            return View(stateDetailRepository.GetStateDetails());
+            return View(stateService.GetState());
         }
     }
 }
