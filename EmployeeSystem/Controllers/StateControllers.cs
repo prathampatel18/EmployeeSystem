@@ -9,17 +9,23 @@ namespace EmployeeSystem.Controllers
 {
     public class StateControllers : Controller
     {
-        private readonly IStateService stateService;
+        private readonly IStateService _stateService;
 
-        public StateControllers()
+        public StateControllers(IStateService stateService)
         {
-            stateService = new StateService();
+            _stateService =  new StateService();
         }
 
         
+        public IActionResult StateDetail()
+        {
+           return View(_stateService.GetState());
+        }
         public IActionResult Index()
         {
-            return View(stateService.GetState());
+            return View(_stateService.GetState());
         }
+
+
     }
 }

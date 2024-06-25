@@ -1,3 +1,10 @@
+using EmployeeSystem.BusinessService;
+using EmployeeSystem.BusinessService.Concreate;
+using EmployeeSystem.BusinessService.Interface;
+using EmployeeSystem.Repository;
+using EmployeeSystem.Repository.Concreate;
+using EmployeeSystem.Repository.Repository;
+
 namespace EmployeeSystem
 {
     public class Program
@@ -5,9 +12,18 @@ namespace EmployeeSystem
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            RepositoryDepedencyContainer.Registration(builder.Services);
+            ServiceDepedencyContainer.Registration(builder.Services);
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //builder.Services.AddScoped<IStateDetailRepository,StateDetailRepository>();
+            //builder.Services.AddScoped<IStateService, StateService>();       
+            //builder.Services.AddScoped<IUserRepository, UserRepository>();
+            //builder.Services.AddScoped<IUserService, UserService>();
+
+          
 
             var app = builder.Build();
 

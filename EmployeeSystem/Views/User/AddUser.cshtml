@@ -1,0 +1,16 @@
+﻿@model UserViewModel
+
+@ViewData["Form Title"]
+<form asp-action="AddUser" asp-controller="User" method="post">
+
+    <input type="hidden" asp-for="EmpId" />
+    <input type="text" asp-for="FName" />
+    <input type="text" asp-for="LName" />
+   
+    <input type="number" asp-for="Contact" />
+
+    <input type="submit" value="Save" />
+
+
+
+</form>

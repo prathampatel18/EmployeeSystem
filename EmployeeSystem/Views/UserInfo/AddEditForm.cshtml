@@ -1,0 +1,33 @@
+﻿@model UserViewModel
+
+@{
+    Layout = null;
+}
+
+<form asp-action="AddUser" asp-controller="UserInfo" method="post" onsubmit="return jQueryAjaxPost(this);">
+
+    <input type="hidden" asp-for="EmpId" />
+
+    <div class="form-group">
+        <label for="batch">FName</label>
+        <input type="text" class="form-control" id="Name" placeholder="Name" asp-for="FName">
+    </div>
+
+    <div class="form-group">
+        <label for="batch">LName</label>
+        <input type="text" class="form-control" id="LName" placeholder="LName" asp-for="LName">
+    </div>
+
+    <div class="form-group">
+        <label for="batch">Contact</label>
+        <input type="text" class="form-control" id="Contact" placeholder="Contact" asp-for="Contact">
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Cancel</button>
+
+    </div>
+
+</form>

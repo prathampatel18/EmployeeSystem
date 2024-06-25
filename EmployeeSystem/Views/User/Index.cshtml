@@ -1,0 +1,19 @@
+﻿@model List<UserViewModel>
+
+@{
+    var d1 = TempData["message"];
+    TempData.Keep("message");
+}
+
+@d1
+
+@foreach (var d in Model)
+{
+    <div>
+        @d.FName @d.LName @d.Contact
+
+        <a asp-controller="User" asp-action="AddUser" asp-route-id="@d.EmpId">Edit</a>
+        <a asp-controller="User" asp-action="DeleteUser" asp-route-id="@d.EmpId">Delete</a>
+    </div>
+
+} 
